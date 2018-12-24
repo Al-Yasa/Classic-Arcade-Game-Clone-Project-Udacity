@@ -1,0 +1,1035 @@
+@font-face {
+    font-family: '04b03';
+    src: url(../fonts/04b03.ttf) format('truetype'); /* webfont from https://www.dafont.com/04b-03.font */
+}
+
+/****
+    #fff -- white
+    #e63c44 -- red
+    #1f1d2c -- dark purple
+    #373253 -- light purple
+    #5c6988 -- light blue
+    rgba(0, 0, 0, 0.8) -- overlay
+****/
+
+/**** General ****/
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "04b03", sans-serif;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    background-color: #1f1d2c;
+    color: #fff;
+    font-size: 18px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/**** Start Menu ****/
+/* #start-menu * {outline: 2px solid green;} */
+#start-menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 3;
+    background-color: #1f1d2c;
+    background-size: cover;
+    display: flex;
+}
+
+/** Welcome Screen **/
+.welcome-screen {
+    align-self: center;
+    margin: 0 auto;
+    animation: fadeInOut 4s ease-in-out;
+    opacity: 0;
+}
+
+.welcome-screen img {
+    width: 100px;
+}
+
+.welcome-screen p {
+    font-size: 1em;
+}
+
+@keyframes fadeInOut {
+    0% {opacity: 0;}
+    50% {opacity: 1;}
+    90%, 100% {opacity: 0;}
+}
+
+@media all and (min-width: 600px) {
+    .welcome-screen img {
+        width: 150px;
+    }
+
+    .welcome-screen p {
+        font-size: 1.5em;
+    }
+}
+
+/** Hello Screen **/
+.hello-screen {
+    align-self: center;
+    margin: 0 auto;
+    animation: bounceIn 0.5s ease-in-out;
+}
+
+@keyframes bounceIn {
+    0% {transform: scale(0, 0);}
+    25% {transform: scale(1.3, 1.3);}
+    50% {transform: scale(0.8, 0.8);}
+    75% {transform: scale(1.1, 1.1);}
+    100% {transform: scale(1, 1);}
+}
+
+.hello-screen h1 {
+    font-size: 2em;
+}
+
+.hello-screen h1 span {
+    color: #e63c44;
+}
+
+.hello-screen P {
+    font-size: 1em;
+    animation: flash 3s ease-in-out infinite;
+}
+
+@keyframes flash {
+    0% {opacity: 0;}
+    50% {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+@media all and (min-width: 600px) {
+    .hello-screen h1 {
+        font-size: 3em;
+    }
+
+    .hello-screen P {
+        font-size: 1.5em;
+    }
+}
+
+/** Main Menu **/
+.main-menu {
+    background-color: #373253;
+    align-self: center;
+    margin: 0 auto;
+}
+
+.main-menu > p {
+    font-size: 1em;
+    margin: 0;
+    padding: 30px 60px;
+    cursor: pointer;
+}
+
+.main-menu > p:hover {
+    color: #e63c44;
+}
+
+@media all and (min-width: 600px) and (min-height: 700px) {
+    .main-menu > p {
+        font-size: 1.5em;
+        padding: 50px 100px;
+    }
+}
+
+/** Play Menu **/
+.play-menu {
+    padding: 15px;
+    width: 100%;
+    letter-spacing: 2px;
+    font-size: 0.8em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.play-menu  h3 {
+    font-weight: bold;
+    font-size: 1.3em;
+    margin: 0 0 15px;
+    color: #e63c44;
+}
+
+.play-menu .select-character > div {
+    display: inline-block;
+    width: 80px;
+    height: 85px;
+    filter: grayscale(100%);
+    border: 2px solid #5c6988;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.play-menu .select-character > .scorpion {
+    background: url(../images/character-image.png) 0 0;
+    background-size: 200%;
+}
+
+.play-menu .select-character > .subzero {
+    background: url(../images/character-image.png) 0 -82px;
+    background-size: 200%;
+}
+
+.play-menu .select-character > .reptile {
+    background: url(../images/character-image.png) 0 -160px;
+    background-size: 200%;
+}
+
+.play-menu .select-character > .selected {
+    filter: grayscale(0);
+}
+
+.play-menu  span {
+    display: inline-block;
+    margin-bottom: 10px;
+    background: #373253;
+    padding: 10px 15px;
+}
+
+.play-menu span.selected {
+    background: #5c6988;
+}
+
+.play-menu  > .navigation {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between
+}
+
+.play-menu  > .navigation  p {
+    margin: 40px 0 0;
+    padding: 20px 0 0;
+    flex: 1;
+}
+
+.play-menu  > .navigation .back {text-align: left;}
+
+.play-menu  > .navigation .play {text-align: right;}
+
+.play-menu  > .navigation .back:hover,
+.play-menu  > .navigation .play:hover  {
+    color: #e63c44;
+}
+
+@media all and (min-width: 600px) and (min-height: 700px)  {
+    .play-menu {
+        padding: 30px;
+        width: 100%;
+        letter-spacing: 3px;
+        font-size: 1.2em;
+    }
+
+    .play-menu  h3 {
+        font-weight: bold;
+        font-size: 1.5em;
+        margin: 0 0 30px;
+    }
+
+    .play-menu .select-character > div {
+        display: inline-block;
+        width: 120px;
+        height: 127px;
+        border: 3px solid #5c6988;
+        margin-bottom: 15px;
+    }
+
+    .play-menu .select-character > .subzero {
+        background-position-y: -120px;
+    }
+
+    .play-menu .select-character > .reptile {
+        background-position-y: -240px;
+    }
+
+    .play-menu  span {
+        margin-bottom: 15px;
+        padding: 15px 25px;
+    }
+
+    .play-menu  > .navigation  p {
+        padding: 40px 0 0;
+    }
+}
+
+/** Instructions Menu **/
+.instructions-menu {
+    text-align: left;
+    padding: 15px;
+    letter-spacing: 2px;
+    font-size: 0.8em;
+    line-height: 1.4em;
+}
+
+.instructions-menu h3 {
+    font-weight: bold;
+    font-size: 1.3em;
+    margin: 0;
+    color: #e63c44;
+}
+
+.instructions-menu  ul {
+    padding: 0 10px;
+    list-style: none;
+    font-size: 0.8em;
+}
+
+.instructions-menu li {
+    background-color: #373253;
+    padding: 5px 0 5px 15px;
+    margin-bottom: 5px;
+}
+
+.instructions-menu  > .back {
+    cursor: pointer;
+    margin: 50px 0 0;
+    text-align: center;
+    padding: 10px 0 0;
+}
+
+.instructions-menu  > .back:hover {
+    color: #e63c44;
+}
+
+@media all and (min-width: 600px) and (min-height: 700px) {
+    .instructions-menu {
+        padding: 30px;
+        letter-spacing: 3px;
+        font-size: 1.3em;
+    }
+
+    .instructions-menu h3 {
+        font-size: 1.6em;
+    }
+
+    .instructions-menu  ul {
+        padding: 0 15px;
+        font-size: 1em;
+    }
+
+    .instructions-menu li {
+        padding: 10px 0 10px 30px;
+        margin-bottom: 10px;
+    }
+
+    .instructions-menu  > .back {
+        margin: 75px 0 0;
+        padding: 20px 0 0;
+    }
+}
+
+/** Credits Menu **/
+.credits-menu {
+    padding: 15px;
+    letter-spacing: 2px;
+    font-size: 0.8em;
+    line-height: 1.4em;
+    display: flex;
+    width: 600px;
+    margin: 0 auto;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.credits-menu > h2 {
+    margin: 0 0 10px;
+    font-size: 1.6em;
+}
+
+.credits-menu a {
+    color: #e63c44;
+    text-decoration: none;
+}
+
+.credits-menu > h3 {
+    font-size: 1.3em;
+    color: #e63c44;
+    margin: 20px 0 0 10px;
+}
+
+.credits-menu > h4 {
+    font-size: 1em;
+    margin: 10px 0 5px 0;
+}
+
+.credits-menu > p {
+    margin: 5px 0 10px;
+}
+
+.credits-menu > .copyright {
+    margin: 30px 0 0;
+}
+
+.credits-menu  > .back {
+    cursor: pointer;
+    margin: 50px 0 0;
+    text-align: center;
+    padding: 0 0 10px;
+}
+
+.credits-menu  > .back:hover {
+    color: #e63c44;
+}
+
+@media all and (min-width: 600px) and (min-height: 700px) {
+    .credits-menu {
+        padding: 30px;
+        font-size: 1.3em;
+        letter-spacing: 3px;
+        display: flex;
+    }
+
+    .credits-menu > h2 {
+        font-size: 1.8em;
+    }
+
+    .credits-menu > h3 {
+        font-size: 1.5em;
+        margin: 40px 0 0 20px;
+    }
+
+    .credits-menu > h4 {
+        font-size: 1.4em;
+        margin: 20px 0 10px 0;
+    }
+
+    .credits-menu > p {
+        margin: 0 0 20px;
+    }
+
+    .credits-menu > .copyright {
+        margin: 30px 0 0;
+    }
+
+    .credits-menu  > .back {
+        cursor: pointer;
+        margin: 50px 0 0;
+        text-align: center;
+        padding: 0 0 10px;
+    }
+}
+
+/**** In-Game Menu ****/
+/* .ingame-menu * {outline: 2px solid green;} */
+.ingame-menu {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+@media all and (min-width: 600px) {
+    .ingame-menu {
+        padding: 10px;
+    }
+}
+
+@media all and (min-width: 1200px) {
+    .ingame-menu {
+        width: 60%;
+        margin: 0 auto;
+    }
+}
+
+/** Character Panel **/
+#character-panel {
+    display: flex;
+    flex-basis: 40%;
+    justify-content: flex-start;
+    position: relative;
+}
+
+#character-panel > .character-image {
+    width: 48px;
+    height: 51px;
+    border: 2px solid #5c6988;
+    background-image: url(../images/character-image.png);
+    background-size: 200%;
+}
+
+#character-panel > .scorpion {
+    background-position-x: 0;
+    background-position-y: 0;
+}
+
+#character-panel > .subzero {
+    background-position-x: 0;
+    background-position-y: -48px;
+}
+
+#character-panel > .reptile {
+    background-position-x: 0;
+    background-position-y: -93px;
+}
+
+#character-panel > .alt {
+    background-position-x: -44px;
+}
+
+#character-panel > div:not(:first-child) {
+    align-self: flex-end;
+    margin: 0 0 0 5px;
+}
+
+#character-panel > div .character-name {
+    font-size: 0.7em;
+    letter-spacing: 0.2em;
+    margin: 0 0 5px;
+    text-align: left;
+}
+
+#character-panel > div .health-bar {
+    background: url(../images/bars-sheet.png) 0 0;
+    background-size: 100%;
+    width: 80px;
+    height: 12.5px;
+    margin: 0 0 5px;
+}
+
+#character-panel > div .power-bar {
+    background: url(../images/bars-sheet.png) 0 -73px;
+    background-size: 100%;
+    width: 80px;
+    height: 12.5px;
+}
+
+@media all and (min-width: 600px) {
+    #character-panel > .character-image {
+        width: 80px;
+        height: 85px;
+        border: 3px solid #5c6988;
+    }
+
+    #character-panel > .scorpion {
+        background-position-x: 0;
+        background-position-y: 0;
+    }
+
+    #character-panel > .subzero {
+        background-position-x: 0;
+        background-position-y: -78px;
+    }
+
+    #character-panel > .reptile {
+        background-position-x: 0;
+        background-position-y: -156px;
+    }
+
+    #character-panel > .alt {
+        background-position-x: -72px;
+    }
+
+    #character-panel > div:not(:first-child) {
+        margin: 0 0 0 10px;
+    }
+
+    #character-panel > div .character-name {
+        font-size: 1.2em;
+    }
+
+    #character-panel > div .health-bar {
+        width: 164px;
+        height: 25px;
+    }
+
+    #character-panel > div .power-bar {
+        background-position-y: -150px;
+        background-size: 162.5%;
+        width: 101px;
+        height: 25px;
+    }
+}
+
+/** Time Panel **/
+#time-panel {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 20%;
+    color: #fff;
+    position: relative;
+}
+
+#time-panel > span {
+    z-index: 5;
+    position: absolute;
+    display: block;
+    width: 200px;
+    text-align: left;
+    top: 250%;
+    left: -110%;
+    font-size: 1.2em;
+    text-shadow: 2px 2px 0 #000;
+    animation: appear 1.5s linear;
+    opacity: 0;
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+        top: 250%;
+    }
+
+    75% {
+        opacity: 1;
+        top: 200%;
+    }
+
+    100% {
+        opacity: 0;
+        top: 100%;
+    }
+}
+
+#time-panel h3 {
+    margin: 0 0 5px;
+    font-size: 0.7em;
+    letter-spacing: 0.2em;
+}
+
+#time-panel .timer {
+    font-size: 1em;
+}
+
+@media all and (min-width: 600px) {
+    #time-panel > span {
+        width: 400px;
+        font-size: 1.8em;
+        text-shadow: 3px 3px 0 #000;
+        top: 200%;
+        left: -70%;
+    }
+
+    @keyframes appear {
+        0% {
+            opacity: 0;
+            top: 200%;
+        }
+
+        75% {
+            opacity: 1;
+            top: 150%;
+        }
+
+        100% {
+            opacity: 0;
+            top: 50%;
+        }
+    }
+
+    #time-panel h3 {
+        margin: 0 0 10px;
+        font-size: 1.4em;
+    }
+
+    #time-panel .timer {
+        font-size: 1.8em;
+    }
+}
+
+@media all and (min-width: 900px) {
+    #time-panel > span {
+        top: 200%;
+        left: -30%;
+    }
+}
+
+/** Tools Panel **/
+#tools-panel {
+    display: flex;
+    flex-basis: 40%;
+    justify-content: flex-end;
+}
+
+#tools-panel .pause {
+    background: url(../images/buttons-sheet.png) 0 -100px;
+    background-size: 400%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+#tools-panel .pause:hover {
+    background-position-x: -50px;
+}
+
+#tools-panel .restart {
+    margin: 0 0 0 5px;
+    background: url(../images/buttons-sheet.png) 0 0;
+    background-size: 400%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+#tools-panel .restart:hover {
+    background-position-x: -50px;
+}
+
+@media all and (min-width: 600px) {
+    #tools-panel .pause {
+        background-position-y: -150px;
+        width: 75px;
+        height: 75px;
+    }
+
+    #tools-panel .pause:hover {
+        background-position-x: -75px;
+    }
+
+    #tools-panel .restart {
+        margin: 0 0 0 10px;
+        background-position-y: 0;
+        width: 75px;
+        height: 75px;
+    }
+
+    #tools-panel .restart:hover {
+        background-position-x: -75px;
+    }
+}
+
+/** Keyboard Controls **/
+#keyboard-controls {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+    width: 96%;
+    margin: 0 5px 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    opacity: 0.4;
+}
+
+#keyboard-controls .up-arrow {
+    margin: 0 auto;
+    background: url(../images/buttons-sheet.png) -100px 0;
+}
+
+#keyboard-controls .right-arrow {
+    display: inline-block;
+    background: url(../images/buttons-sheet.png) -100px -100px;
+}
+
+#keyboard-controls .down-arrow {
+    display: inline-block;
+    margin: 5px 5px 0;
+    background: url(../images/buttons-sheet.png) -100px -50px;
+}
+
+#keyboard-controls .left-arrow {
+    display: inline-block;
+    background: url(../images/buttons-sheet.png) -100px -150px;
+}
+
+#keyboard-controls .movement > div {
+    background-size: 400%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+#keyboard-controls .movement > div:hover {
+    background-position-x: -150px;
+}
+
+#keyboard-controls .power {
+    background: url(../images/buttons-sheet.png) 0 -50px;
+    background-size: 400%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    margin: 0 0 5px;
+
+}
+
+#keyboard-controls .power:hover {
+    background-position-x: -50px;
+}
+
+@media all and (min-width: 600px) {
+    #keyboard-controls {
+        margin: 0 10px 10px;
+    }
+
+    #keyboard-controls .up-arrow {
+        background-position-x: -150px;
+    }
+
+    #keyboard-controls .right-arrow {
+        background-position-x: -150px;
+        background-position-y: -150px;
+    }
+
+    #keyboard-controls .down-arrow {
+        margin: 10px 10px 0;
+        background-position-x: -150px;
+        background-position-y: -75px;
+    }
+
+    #keyboard-controls .left-arrow {
+        display: inline-block;
+        background-position-x: -150px;
+        background-position-y: -225px;
+    }
+
+    #keyboard-controls .movement > div {
+        width: 75px;
+        height: 75px;
+    }
+
+    #keyboard-controls .movement > div:hover {
+        background-position-x: -225px;
+    }
+
+    #keyboard-controls .power {
+        background-position-y: -75px;
+        width: 75px;
+        height: 75px;
+        margin: 0 0 10px;
+    }
+
+    #keyboard-controls .power:hover {
+        background-position-x: -75px;
+    }
+}
+
+@media all and (min-width: 1200px) {
+    #keyboard-controls {
+        width: 60%;
+        left: 20%;
+    }
+}
+
+/**** Canvas ****/
+canvas {
+    height: 80vh;
+}
+
+canvas.gameover {
+    animation: shake 0.4s ease-in-out;
+}
+
+@keyframes shake {
+    25% {
+        transform: translateX(10px);
+    }
+
+    50% {
+        transform: translateX(-10px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/**** Modal ****/
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+#modal {
+    width: 320px;
+    background-color: #1f1d2c;
+    padding: 30px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#modal .modal-header {
+    margin:0;
+    font-size: 1.5em;
+    letter-spacing: 0.1em;
+}
+
+#modal .modal-score {
+    margin: 15px 0;
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+}
+
+#modal .modal-score .modal-stars {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+    height: 60px;
+}
+
+#modal .modal-score .modal-stars .star {
+    display: inline-block;
+    width: 51px;
+    height: 45px;
+    background: url(../images/star.png);
+    background-size: 100%;
+    margin: 0 5px 0;
+}
+
+#modal .modal-score .modal-stars .star:not(:nth-child(2)) {
+    align-self: flex-end;
+}
+
+#modal .modal-score .modal-coins,
+#modal .modal-score .modal-health,
+#modal .modal-score .modal-powers,
+#modal .modal-score .modal-time {
+    padding: 5px 10px;
+    font-size: 0.9em;
+    letter-spacing: 0.1em;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #373253;
+}
+
+#modal .modal-score .modal-coins span,
+#modal .modal-score .modal-health span,
+#modal .modal-score .modal-powers span,
+#modal .modal-score .modal-time span {
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+#modal .modal-exit {
+    background: url(../images/buttons-sheet.png) 0 -150px;
+    background-size: 400%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    border: none;
+    margin: 0 10px 0 0;
+}
+
+#modal .modal-exit:hover {
+    background-position-x: -50px;
+}
+
+#modal .modal-pause {
+    background: url(../images/buttons-sheet.png) 0 -100px;
+    background-size: 400%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    border: none;
+}
+
+#modal .modal-pause:hover {
+    background-position-x: -50px;
+}
+
+#modal .modal-replay {
+    background: url(../images/buttons-sheet.png) 0 0;
+    background-size: 400%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    border: none;
+    margin: 0 0 0 10px;
+}
+
+#modal .modal-replay:hover {
+    background-position-x: -50px;
+}
+
+#modal .modal-exit:focus,
+#modal .modal-replay:focus {
+    outline: 0;
+}
+
+@media all and (min-width: 600px) and (min-height: 700px) {
+    #modal {
+        width: 520px;
+        padding: 45px 0;
+    }
+
+    #modal .modal-header {
+        font-size: 2.5em;
+    }
+
+    #modal .modal-score {
+        margin: 30px 0;
+        width: 450px;
+    }
+
+    #modal .modal-score .modal-stars {
+        margin-bottom: 30px;
+        height: 90px;
+    }
+
+    #modal .modal-score .modal-stars .star {
+        width: 85px;
+        height: 75px;
+        margin: 0 15px 0;
+    }
+
+    #modal .modal-score .modal-coins,
+    #modal .modal-score .modal-health,
+    #modal .modal-score .modal-powers,
+    #modal .modal-score .modal-time {
+        padding: 10px 15px;
+        font-size: 1.4em;
+        margin-bottom: 20px;
+    }
+
+    #modal .modal-score .modal-coins span,
+    #modal .modal-score .modal-health span,
+    #modal .modal-score .modal-powers span,
+    #modal .modal-score .modal-time span {
+        font-size: 1.5em;
+    }
+
+    #modal .modal-exit {
+        background-position-y: -225px;
+        width: 75px;
+        height: 75px;
+    }
+
+    #modal .modal-exit:hover {
+        background-position-x: -75px;
+    }
+
+    #modal .modal-pause {
+        background-position-y: -150px;
+        width: 75px;
+        height: 75px
+    }
+
+    #modal .modal-pause:hover {
+        background-position-x: -75px;
+    }
+
+    #modal .modal-replay {
+        width: 75px;
+        height: 75px
+    }
+
+    #modal .modal-replay:hover {
+        background-position-x: -75px;
+    }
+}
