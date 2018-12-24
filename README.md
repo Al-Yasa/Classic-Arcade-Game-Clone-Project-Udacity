@@ -28,23 +28,22 @@ If you want to play offline you have to download the game first:
 
     1. Click on the green "Clone or download" button above.
 
-    1. Click on download as Zip.
+    2. Click on Download ZIP.
 
-    1. Extract downloaded Zip file.
+    3. Extract downloaded Zip file.
 
-    1. Navigate inside game folder.
+    4. Navigate inside game folder.
 
-    1. Open index.html.
+    5. Open index.html.
 
 * Method 2:
 
     1. If you have git installed you can clone this repo to your desktop by running this command line:
+`git clone https://github.com/Al-Yasa/Classic-Arcade-Game-Clone-Project-Udacity.git`
 
-    `git clone https://github.com/Al-Yasa/Classic-Arcade-Game-Clone-Project-Udacity.git`
+    2. Navigate inside game folder.
 
-    1. Navigate inside game folder.
-
-    1. Open index.html.
+    3. Open index.html.
 
 This game is playable on both mobile devices and laptops/dektops.
 
