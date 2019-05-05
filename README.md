@@ -14,6 +14,14 @@ The objective of the game is to cross the map safely and capture all finish slot
 
 ![Frogger MK](images/froggermk.png "Frogger MK")
 
+![Frogger MK Preview 01](images/fmk_preview01.jpg "Frogger MK Preview 01")
+
+![Frogger MK Preview 02](images/fmk_preview02.jpg "Frogger MK Preview 02")
+
+![Frogger MK Scorpion Power](images/scorpion_power.gif "Frogger MK Scorpion Power")
+![Frogger MK Subzero Power](images/subzero_power.gif "Frogger MK Subzero Power")
+![Frogger MK Reptile Power](images/reptile_power.gif "Frogger MK Reptile Power")
+
 ## Instructions
 
 ### Usage
@@ -45,7 +53,7 @@ If you want to play offline you have to download the game first:
 
     3. Open index.html.
 
-This game is playable on both mobile devices and laptops/dektops.
+This game is playable on both mobile devices and laptops/desktops.
 
 ### How to Play
 
@@ -65,7 +73,7 @@ At the start of the game, you will be at the bottom of the map, Using the arrow 
 - Use Arrow keys to move.
 - Press SPACEBAR to pause the game.
 - Press R to restart the game.
-- Press Q to use your power.
+- Press F to use your power.
 
 ## Credits
 This game was put together by Al-Yasa' with some inspiration from Mortal Kombat™.
