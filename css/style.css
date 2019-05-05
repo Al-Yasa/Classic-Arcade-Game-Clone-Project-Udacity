@@ -15,6 +15,13 @@
 /**** General ****/
 * {
     box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
 }
 
 body {
@@ -135,7 +142,7 @@ body {
     cursor: pointer;
 }
 
-.main-menu > p:hover {
+.main-menu > p:active {
     color: #e63c44;
 }
 
@@ -198,6 +205,7 @@ body {
     margin-bottom: 10px;
     background: #373253;
     padding: 10px 15px;
+    cursor: pointer;
 }
 
 .play-menu span.selected {
@@ -220,8 +228,8 @@ body {
 
 .play-menu  > .navigation .play {text-align: right;}
 
-.play-menu  > .navigation .back:hover,
-.play-menu  > .navigation .play:hover  {
+.play-menu  > .navigation .back:active,
+.play-menu  > .navigation .play:active  {
     color: #e63c44;
 }
 
@@ -300,7 +308,7 @@ body {
     padding: 10px 0 0;
 }
 
-.instructions-menu  > .back:hover {
+.instructions-menu  > .back:active {
     color: #e63c44;
 }
 
@@ -380,7 +388,7 @@ body {
     padding: 0 0 10px;
 }
 
-.credits-menu  > .back:hover {
+.credits-menu  > .back:active {
     color: #e63c44;
 }
 
@@ -660,7 +668,7 @@ body {
     cursor: pointer;
 }
 
-#tools-panel .pause:hover {
+#tools-panel .pause:active {
     background-position-x: -50px;
 }
 
@@ -673,7 +681,7 @@ body {
     cursor: pointer;
 }
 
-#tools-panel .restart:hover {
+#tools-panel .restart:active {
     background-position-x: -50px;
 }
 
@@ -684,7 +692,7 @@ body {
         height: 75px;
     }
 
-    #tools-panel .pause:hover {
+    #tools-panel .pause:active {
         background-position-x: -75px;
     }
 
@@ -695,7 +703,7 @@ body {
         height: 75px;
     }
 
-    #tools-panel .restart:hover {
+    #tools-panel .restart:active {
         background-position-x: -75px;
     }
 }
@@ -742,7 +750,7 @@ body {
     cursor: pointer;
 }
 
-#keyboard-controls .movement > div:hover {
+#keyboard-controls .movement > div:active {
     background-position-x: -150px;
 }
 
@@ -756,7 +764,7 @@ body {
 
 }
 
-#keyboard-controls .power:hover {
+#keyboard-controls .power:active {
     background-position-x: -50px;
 }
 
@@ -791,7 +799,7 @@ body {
         height: 75px;
     }
 
-    #keyboard-controls .movement > div:hover {
+    #keyboard-controls .movement > div:active {
         background-position-x: -225px;
     }
 
@@ -802,7 +810,7 @@ body {
         margin: 0 0 10px;
     }
 
-    #keyboard-controls .power:hover {
+    #keyboard-controls .power:active {
         background-position-x: -75px;
     }
 }
@@ -865,6 +873,7 @@ canvas.gameover {
     margin:0;
     font-size: 1.5em;
     letter-spacing: 0.1em;
+    padding: 5px 10px;
 }
 
 #modal .modal-score {
@@ -926,7 +935,7 @@ canvas.gameover {
     margin: 0 10px 0 0;
 }
 
-#modal .modal-exit:hover {
+#modal .modal-exit:active {
     background-position-x: -50px;
 }
 
@@ -939,7 +948,7 @@ canvas.gameover {
     border: none;
 }
 
-#modal .modal-pause:hover {
+#modal .modal-pause:active {
     background-position-x: -50px;
 }
 
@@ -953,7 +962,7 @@ canvas.gameover {
     margin: 0 0 0 10px;
 }
 
-#modal .modal-replay:hover {
+#modal .modal-replay:active {
     background-position-x: -50px;
 }
 
@@ -965,7 +974,7 @@ canvas.gameover {
 @media all and (min-width: 600px) and (min-height: 700px) {
     #modal {
         width: 520px;
-        padding: 45px 0;
+        padding: 40px 0;
     }
 
     #modal .modal-header {
@@ -1010,7 +1019,7 @@ canvas.gameover {
         height: 75px;
     }
 
-    #modal .modal-exit:hover {
+    #modal .modal-exit:active {
         background-position-x: -75px;
     }
 
@@ -1020,7 +1029,7 @@ canvas.gameover {
         height: 75px
     }
 
-    #modal .modal-pause:hover {
+    #modal .modal-pause:active {
         background-position-x: -75px;
     }
 
@@ -1029,7 +1038,7 @@ canvas.gameover {
         height: 75px
     }
 
-    #modal .modal-replay:hover {
+    #modal .modal-replay:active {
         background-position-x: -75px;
     }
 }

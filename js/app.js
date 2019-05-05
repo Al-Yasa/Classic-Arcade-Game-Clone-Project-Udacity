@@ -197,14 +197,12 @@ const POWER_BAR = document.querySelector('.power-bar');
     this function is for updating the players powers on the UI
 */
 function power(powers) {
-    if (!selectedCheats.has('infinite-power')) { // update powers only if the infinite-power cheat is off
         /*
             moving accross the spritesheet on different screen sizes is not
             the same, therefore i had to use window.innerWidth
         */
         if (window.innerWidth < 600) {POWER_BAR.style.backgroundPositionY = `-${(9 - powers) * 12.2}px`;}
         else {POWER_BAR.style.backgroundPositionY = `-${(9 - powers) * 25}px`;}
-    }
 }
 
 /**** Game Won ****/
@@ -340,7 +338,7 @@ const AllowedKeys = {
     38: 'up',
     39: 'right',
     40: 'down',
-    81: 'Q',
+    70: 'F',
     82: 'R'
 };
 
@@ -415,7 +413,7 @@ function select(HTMLElement, clicked, selectedType) {
             } else if (selectedType === 'speed') { // store the selectd speed
                 selectedSpeed = clicked;
             }
-        }  else {child.classList.remove('selected');} // update the UI by removing the selection from the not clicked elements
+        } else {child.classList.remove('selected');} // update the UI by removing the selection from the not clicked elements
     }
 }
 
@@ -440,7 +438,7 @@ function deSelect(HTMLElements) {
 */
 function changeCostumes(num) {
     for (let character of SELECT_CHARACTER.children) { // loop throught all character elements
-         /*
+        /*
             moving accross the spritesheet on different screen sizes is not
             the same, therefore i had to use window.innerHeight
         */
@@ -648,7 +646,7 @@ class Character {
             }
         }
 
-        if ((input === 'Q' || input === 'power') && startedGame && !paused && !this.win && this.health) {
+        if ((input === 'F' || input === 'power') && startedGame && !paused && !this.win && this.health) {
             if (this.powers && !ENEMY_1_1.sy && !selectedCheats.has('infinite-power')) { // if there are powers left and if enemies are not currently being destroyed and player is not using the infinit-power cheat
                 if (this.name === 'subzero') {FREEZE_SOUND.play();}
                 else if (this.name === 'scorpion') {FIRE_SOUND.play();}
@@ -1111,7 +1109,7 @@ START_MENU.addEventListener('click', e => {
         }
         else if (clicked === 'play') {
 
-            if (selectedCharacter && selectedSpeed) { // only start the game if player has selected a character and a level and a game speed
+            if (selectedCharacter && selectedLevel && selectedSpeed) { // only start the game if player has selected a character and a level and a game speed
                 MENU_CLICK_SOUND.play();
                 updateSprites();
                 hide(START_MENU);
